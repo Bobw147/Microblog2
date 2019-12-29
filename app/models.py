@@ -2,6 +2,7 @@ from datetime import datetime
 from app import db, login
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+
 # Stop pyliint from complaining about dynamically created members not
 # being present when the file is checked
 # pylint: disable=E1101
