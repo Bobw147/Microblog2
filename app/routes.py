@@ -22,9 +22,19 @@ def index():
         flash('Your post is now live!')
         return redirect(url_for('index'))
     posts = current_user.followed_posts().all()
+ 
+    # This is a messy solution (Lesson 9).
+    # It should really create an indexbase.html template
+    # and have two seperate pages ased on it...
+    # index.html and posts.html
     return render_template("index.html", title='Home Page', form=form,
                            posts=posts)
 
+@app.route('/explore')
+@login_required
+def explore():
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html', title='Explore', posts=posts)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
