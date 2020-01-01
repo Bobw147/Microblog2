@@ -15,3 +15,7 @@ class Config(object):
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
     ADMINS = ['bobw@ntlworld.com']
+
+    # Used in pagination of user posts to determination
+    # how many should be displayed on each 'page'
+    POSTS_PER_PAGE = 3
