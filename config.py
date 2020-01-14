@@ -19,3 +19,7 @@ class Config(object):
     # Used in pagination of user posts to determination
     # how many should be displayed on each 'page'
     POSTS_PER_PAGE = 3
+
+    # Define the currently supprted languages
+    LANGUAGES = ['en-US', 'en-GB', 'en-CA, es']
+
