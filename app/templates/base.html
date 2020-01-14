@@ -50,3 +50,9 @@
         {% block app_content %}{% endblock %}
     </div>
 {% endblock %}
+
+{# Bootstrap block for Javascript imports #}
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+{% endblock %}
