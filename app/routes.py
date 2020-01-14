@@ -7,6 +7,7 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, Re
 from app.models import User, Post
 from werkzeug.urls import url_parse
 from datetime import datetime
+from guess_language import guess_language
 
 # Stop pyliint from complaining about dynamically created members not
 # being present when the file is checked
@@ -18,6 +19,9 @@ from datetime import datetime
 def index():
     form = PostForm()
     if form.validate_on_submit():
+        language = guess_language(form.post.data)
+        if language == 'UNKNOWN' or len(language) > 5:
+            language = ''
         post = Post(body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
