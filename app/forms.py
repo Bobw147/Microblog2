@@ -7,14 +7,12 @@ from app import mail
 from app.models import User
 
 class LoginForm(FlaskForm):
-   # pylint:disable=undefined-variable
     username = StringField(_l('Username'), validators=[DataRequired()])
     password = PasswordField(_l('Password'), validators=[DataRequired()])
     remember_me = BooleanField(_l('Remember Me'))
     submit = SubmitField(_l('Sign In'))
 
 class RegistrationForm(FlaskForm):
-   # pylint:disable=undefined-variable
     username = StringField(_l('Username'), validators=[DataRequired()])
     email = StringField(_l('Email'), validators=[DataRequired(), Email()])
     password = PasswordField(_l('Password'), validators=[DataRequired()])
@@ -33,7 +31,6 @@ class RegistrationForm(FlaskForm):
             raise ValidationError(_('Please use a different email address.'))
     
 class EditProfileForm(FlaskForm):
-    # pylint:disable=undefined-variable
     username = StringField(_l('Username'), validators=[DataRequired()])
     about_me = TextAreaField(_l('About me'), validators=[Length(min=0, max=140)])
     submit = SubmitField(_l('Submit'))
@@ -49,18 +46,15 @@ class EditProfileForm(FlaskForm):
                 raise ValidationError(_('Please use a different username.'))
 
 class PostForm(FlaskForm):
-    # pylint:disable=undefined-variable
     post = TextAreaField(_l('Say something'), validators=[
         DataRequired(), Length(min=1, max=140)])
     submit = SubmitField(_l('Submit'))
 
 class ResetPasswordRequestForm(FlaskForm):
-    # pylint:disable=undefined-variable
     email = StringField(_l('Email'), validators=[DataRequired(), Email()])
     submit = SubmitField(_l('Request Password Reset'))
 
 class ResetPasswordForm(FlaskForm):
-    # pylint:disable=undefined-variable
     password = PasswordField(_l('Password'), validators=[DataRequired()])
     password2 = PasswordField(
         _l('Repeat Password'), validators=[DataRequired(), EqualTo('password')])
