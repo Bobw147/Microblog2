@@ -131,3 +131,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 logs/microblog.log.*
+app/translations/es/.DS_Store
+app/translations/.DS_Store
+app/.DS_Store
+app/.DS_Store
+.DS_Store
