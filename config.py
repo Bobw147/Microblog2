@@ -22,4 +22,5 @@ class Config(object):
 
     # Define the currently supprted languages
     LANGUAGES = ['en-US', 'en-GB', 'en-CA, es']
+    MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
 
