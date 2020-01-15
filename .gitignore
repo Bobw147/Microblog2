@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# images
+*.gif
+
 # databases
 *.db
 
@@ -136,3 +139,5 @@ app/translations/.DS_Store
 app/.DS_Store
 app/.DS_Store
 .DS_Store
+.DS_Store
+app/translations/es/LC_MESSAGES/messages.po
