@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 {% extends "base.html" %}
-{% import 'bootstrap.html/wft_html as wtf' %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
     <h1>{{ _('Edit Profile') }}</h1>
@@ -10,4 +10,4 @@
             {{ wtf.quick_form(form) }}
         </div>
     </div>
-    {% endblock %}
+{% endblock %}
